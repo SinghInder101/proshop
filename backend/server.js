@@ -1,6 +1,7 @@
 import express from 'express';
 
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 import connectDB from './config/db.js';
 import { notFound,errorHandler } from './middleware/errorMiddleware.js';
 import productRoutes from './routes/productRoutes.js'
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({
   extended:true
 }))
+app.use(cookieParser());
 app.use((req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*"); // Allow all origins
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
