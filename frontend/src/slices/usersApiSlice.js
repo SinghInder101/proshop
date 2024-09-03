@@ -8,6 +8,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
                 url: `${BASE_URL}/${USERS_URL}/auth`,
                 method:'POST',
                 body:data,
+                credentials:'include'
 
             }),keepUnusedDataFor: 5
             
