@@ -127,7 +127,7 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 const getUsers = asyncHandler(async (req, res) => {
   const users = await User.find({});
 
-  res.status(json(users));
+  res.status(200).json(users);
 });
 //@desc  get user by ID
 //@ GET /api/users/:ID
