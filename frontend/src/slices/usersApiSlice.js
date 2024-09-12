@@ -5,7 +5,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
   endpoints: (builder) => ({
     login: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}/auth`,
+        url: `${BASE_URL}/${USERS_URL}/auth`,
         method: "POST",
         body: data,
         credentials: "include",
@@ -14,7 +14,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     register: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}`,
+        url: `${BASE_URL}/${USERS_URL}`,
         method: "POST",
         body: data,
         credentials: "include",
@@ -22,13 +22,13 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     logout: builder.mutation({
       query: () => ({
-        url: `${USERS_URL}/logout`,
+        url: `${BASE_URL}/${USERS_URL}/logout`,
         method: "POST",
       }),
     }),
     profile: builder.mutation({
       query: (data) => ({
-        url: `${USERS_URL}/profile`,
+        url: `${BASE_URL}/${USERS_URL}/profile`,
         method: "PUT",
         body: data,
         credentials: "include",
@@ -36,7 +36,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     getUsers: builder.query({
       query: () => ({
-        url: `${USERS_URL}`,
+        url: `${BASE_URL}/${USERS_URL}`,
         credentials: "include",
       }),
       providesTags: ["Users"],
@@ -44,7 +44,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     deleteUser: builder.mutation({
         query: (userId) => ({
-            url: `${USERS_URL}/${userId}`,
+            url: `${BASE_URL}/${USERS_URL}/${userId}`,
             method:'DELETE',
             credentials: "include",
 
@@ -52,7 +52,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     getUserDetails:builder.query({
         query:(userId) => ({
-            url: `${USERS_URL}/${userId}`,
+            url: `${BASE_URL}/${USERS_URL}/${userId}`,
             credentials: "include",
 
         }),
@@ -60,7 +60,7 @@ export const usersApiSlice = apiSlice.injectEndpoints({
     }),
     updateUser: builder.mutation({
         query:({data}) => ({
-            url: `${USERS_URL}/${data.userId}`,
+            url: `${BASE_URL}/${USERS_URL}/${data.userId}`,
             method:'PUT',
             body:data
 
