@@ -23,7 +23,7 @@ app.use(
 );
 app.use(cookieParser());
 app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // Allow all origins
+  res.header("Access-Control-Allow-Origin", "*"); // Allow all origins
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
