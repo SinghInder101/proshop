@@ -7,7 +7,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import { Provider } from "react-redux";
-import {HelmentProvider} from 'react-helmet-async'
+import { HelmetProvider } from 'react-helmet-async';
+
 import store from "./store";
 import {
   PayPalScriptProvider,
@@ -69,13 +70,13 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <HelmentProvider>
+    <HelmetProvider>
     <Provider store={store}>
       <PayPalScriptProvider deferLoading={true}>
         <RouterProvider router={router} />
       </PayPalScriptProvider>
     </Provider>
-    </HelmentProvider>
+    </HelmetProvider>
   </React.StrictMode>
 );
 
