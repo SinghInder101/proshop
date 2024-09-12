@@ -1,4 +1,7 @@
 <h1>ProShop : Ecommerce Project</h1>
+<blockquote>
+<p dir="auto">eCommerce platform built with the MERN stack &amp; Redux.</p>
+</blockquote>
 <img src="https://raw.githubusercontent.com/bradtraversy/proshop-v2/main/frontend/public/images/screens.png" style="max-width: 100%;">
 
 <h1>Features</h1>
