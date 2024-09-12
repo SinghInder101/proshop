@@ -7,7 +7,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
       query: (data) => {
         console.log("Fetching all products from:", data);
         return {
-          url: `${BASE_URL}/${PRODUCTS_URL}`,
+          url: `${PRODUCTS_URL}`,
           params:{
             pageNumber:data.pageNumber,
             keyword:data.keyword
@@ -19,7 +19,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     getProductDetails: builder.query({
       query: (productId) => {
-        const url = `${BASE_URL}/api/products/${productId}`;
+        const url = `api/products/${productId}`;
         console.log("Fetching product details from:", url);
         return {
           url,
@@ -29,7 +29,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     createProduct: builder.mutation({
       query: (newProduct) => ({
-        url: `${BASE_URL}/${PRODUCTS_URL}`,
+        url: `${PRODUCTS_URL}`,
         method: "POST",
         credentials: "include",
       }),
@@ -37,7 +37,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     updateProduct: builder.mutation({
       query: (data) => ({
-        url: `${BASE_URL}/${PRODUCTS_URL}/${data._id}`,
+        url: `${PRODUCTS_URL}/${data._id}`,
         method: "PUT",
         body: data,
         credentials: "include",
@@ -46,7 +46,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     uploadProductImage: builder.mutation({
       query:(data) => ({
-        url: `${BASE_URL}/${UPLOADS_URL}`,
+        url: `${UPLOADS_URL}`,
         method:'POST',
         body:data,
         credentials: "include",
@@ -54,7 +54,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     deleteProduct: builder.mutation({
       query:(productId) => ({
-        url:  `${BASE_URL}/${PRODUCTS_URL}/${productId}`,
+        url:  `${PRODUCTS_URL}/${productId}`,
         method:'DELETE',
         credentials:'include'
 
@@ -62,7 +62,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     createReview: builder.mutation({
       query: (data) => ({
-        url:  `${BASE_URL}/${PRODUCTS_URL}/${data.productId}/reviews`,
+        url:  `${PRODUCTS_URL}/${data.productId}/reviews`,
         method:'POST',
         body:data,
         credentials:'include',
@@ -72,7 +72,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
     }),
     getTopProducts: builder.query({
       query:() => ({
-        url:  `${BASE_URL}/${PRODUCTS_URL}/top`
+        url:  `${PRODUCTS_URL}/top`
         
       }),
       keepUnusedDataFor:5
